@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+        <t t-name="account_report_filter_account.AccountFilterAccount"
+           t-inherit="account_reports.AccountReportFiltersCustomizable">
+            <xpath expr="//div[@id='filter_date']" position="after">
+                    <div>
+                        <t t-call="account_report_filter_account.AccountReportFilterAccountId"/>
+                    </div>
+            </xpath>
+        </t>
+    <t t-name="account_report_filter_account.AccountReportFilterAccountId">
+            <Dropdown>
+                <button class="btn btn-secondary">
+                    <i class="fa fa-university me-1"/>
+                    Account
+                    <i/>
+                </button>
+
+                <t t-set-slot="content">
+                    <t t-if="'account_id' in controller.options">
+                        <t t-foreach="controller.options.account_id"
+                           t-as="account_Item"
+                           t-key="account_Item_index">
+                            <DropdownItem
+                                    closingMode="'none'"
+                                    class="{ selected: account_Item.selected }"
+                                    onSelected="() => this.filterAccountClick({ optionKey: account_Item})"
+                                    t-out="account_Item.display_name"
+                            />
+                        </t>
+                    </t>
+                </t>
+            </Dropdown>
+        </t>
+
+</templates>
