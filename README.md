@@ -1,5 +1,3 @@
-# odooApps
-
 # Odoo Apps by Odoo Leap Solutions
 
 Welcome to the official GitHub repository of **Odoo Leap Solutions** – your trusted partner in Odoo customization.
