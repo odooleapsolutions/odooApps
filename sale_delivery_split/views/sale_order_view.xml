@@ -1,0 +1,18 @@
+<odoo>
+    <record id="sale_view_form_split" model="ir.ui.view">
+        <field name="name">sale.order.view.split.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='order_lines']/field[@name='order_line']/list/field[@name='product_uom_qty']"
+                   position="before">
+                <field name="split_delivery" string="Split Delivery"
+                       readonly="is_delivery == True or parent.state in ('cancel','sale')"/>
+            </xpath>
+            <xpath expr="//page[@name='other_information']/group/group[@name='sales_person']/field[@name='require_signature']"
+                   position="before">
+                <field name="split_all" string="Split Delivery"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
