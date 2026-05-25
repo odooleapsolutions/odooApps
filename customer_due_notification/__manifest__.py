@@ -13,6 +13,7 @@ This module shows customer overdue amount warning at the top of the sales order 
 A new group "Overdue Amount Viewer" is introduced. Only users in this group can see the actual overdue amount,
 while other users will see a generic warning.
     """,
+    'images': ['static/description/banner.png'],
     'author': 'OdooLeap Solutions',
     'website': 'https://odooleap-solutions.odoo.com',
     'license': 'AGPL-3',
